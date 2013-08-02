@@ -1,0 +1,8 @@
+<h1><%= @user.yt_username %></h1>
+
+<ol>
+  <% @user.playlists.each do |playlist| %>
+    <li><a href="/user/<%= @user.id %>/playlists/<%= playlist.id %>"><%= playlist.yt_title %></a></li>
+  <% end %>
+</ol>
+

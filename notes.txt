@@ -1,0 +1,78 @@
+client = YouTubeIt::Client.new
+
+# get all videos
+client.videos_by(user:'how2makeguitarriffs').videos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+User
+  has_many :playlists
+
+Playlist
+  has_many :videos
+
+Videos
+  belongs_to :playlist
+
+
+
+1. Enter youtube Username
+2. Creates User record
+3. Redirects to User showpage ... get pretty URLs later
+  -> localhost:9797:user/1
+4. User homepage has all index
+5. Worry about styling these later
+
+
+For now, I want a custom background image chosen by user
+  Has Default Image Until Click Custom
+  ex. Joy Division
+    Can Choose Font Colors, Font, etc
+    Just links to Youtube Playlist
+    Later, should have videos play on the page
+
+
+fields
+
+playlists
+user_id
+  title
+  summary
+  description
+  custom_background_image_url
+  template_name -- make 2 for now, just alternate
+    templates load a certain stylesheet
+  yt_playlist_id
+  yt_published
+
+client = YouTubeIt::Client.new
+my_playlists = client.playlists('how2makeguitarriffs')
+my_playlists.first.published
+my_playlists.first.published.class
+
+
+playlists
+  create pages with url for each playlist
+  background image for each playlist
+
+  later
+    template-style
+
+http://www.youtube.com/playlist?list=PLA284741EBBCB0DCF
+
+http://www.youtube.com/playlist?list=<<YT_PLAYLIST_ID>>

@@ -1,0 +1,16 @@
+<style>
+body {
+  background-image:url(<%= @playlist.custom_background_image_url %>);
+  background-size: cover;
+}
+</style>
+
+
+<div class="template-1-main-content">
+  <h1><%= @playlist.yt_title %></h1>
+  <p><%= @playlist.user.yt_username %></p>
+  <p><%= @playlist.yt_summary %></p>
+  <% if @playlist.custom_background_image_url == nil %>
+    <a href="/user/<%= @playlist.user.id %>/playlists/<%= @playlist.id %>/custom_background_image">Add Custom Background Image</a>
+  <% end %>
+</div>

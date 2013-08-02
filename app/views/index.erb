@@ -1,0 +1,11 @@
+<p>Enter Youtube Username</p>
+<form action='/users/new' method="post">
+  <label for="youtubeusername">Enter A Youtube Username</label><br>
+  <input id="youtubeusername" type="text" name="user[yt_username]" required><br>
+  <input type="submit" value="create blog">
+</form>
+
+<p>Current Channels</p>
+<% @users.each do |user| %>
+  <a href="/user/<%= user.id %>"><%= user.yt_username %></a>
+<% end %>

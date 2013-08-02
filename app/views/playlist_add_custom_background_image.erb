@@ -1,0 +1,6 @@
+<p>Add a Custom Background Image for Playlist :<br> <%= @playlist.yt_title %> </p>
+
+<form action="/user/<%= @playlist.user.id %>/playlists/<%= @playlist.id %>/custom_background_image" method="post">
+  <input type="text" name="playlist[custom_background_image_url]" placeholder="image url (use a large image)">
+  <input type="submit" value="add this background image">
+</form>
